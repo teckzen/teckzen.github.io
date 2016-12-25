@@ -1,0 +1,47 @@
+<html>
+  <title>Teck and Zen</title>
+  <script src="jquery-3.1.1.min.js"></script>
+  <script src="javascript/main.js"></script>
+  <script>
+    function showGugeMap()
+    {
+      $("#zenmap").hide();
+      $("#gugemap").show();
+    }
+    function showZenMap()
+    {
+      $("#zenmap").show();
+      $("#gugemap").hide();
+    }
+  </script>
+  <body style="font-family:helvetica">
+    <center>
+      <img src="https://teckzen.github.io/teckzen2.jpg" style="justify-content: center;vertical-align: middle;height: auto; max-width: 100%;">
+      <br/>
+      <hr/>
+      <button type="button" onmouseover="showZenMap()">Map</button><button type="button" onmouseover="showGugeMap()">Google Map</button>
+      <br>
+      <table><tr>
+        <td>
+          <div id="zenmap">
+            <img width="600" src="https://teckzen.github.io/images/map.png"/>
+          </div>
+          <div id="gugemap" style="display:none">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.797545363084!2d101.70990331382218!3d3.148051997707766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362832b00e6b%3A0x9514d96ecbe632ce!2sGrand+Millennium+Kuala+Lumpur!5e0!3m2!1sen!2smy!4v1475335544325" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </td>
+      <td valign="top" width="50">
+        Event validationPer-entry parking at hotel.
+      </td>
+      </tr></table>
+      <br/>
+      <hr/>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScoMmWBU4S8ee8sN9GQEfQd-hJc3gu1zr-Kt8MHNUbuyjfsKw/viewform?embedded=true" width="600" height="160%" frameborder="0" marginheight="0" marginwidth="0" style="overflow:hidden;height:160%;">Loading...</iframe>
+      <!--
+      <br/>
+      <hr/>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX32H_FuIuvShB-VJhEODeYFhxm3m7NTWHEeZo3Ax2LgaCRg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      -->
+    </center>
+  </body>
+</html>

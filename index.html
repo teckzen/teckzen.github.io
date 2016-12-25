@@ -1,20 +1,90 @@
 <html>
   <title>Teck and Zen</title>
-  <script src="javascript/main.js"></script>
+  <style>
+    html, body{
+      height: 100%;
+      min-height: 100%;
+      font-family: helvetica;
+      overflow: hidden;
+      text-align: center;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="javascripts/main.js"></script>
+  <script>
+    function showGugeMap()
+    {
+      $("#zenmap").hide();
+      $("#gugemap").show();
+    }
+    function showZenMap()
+    {
+      $("#zenmap").show();
+      $("#gugemap").hide();
+    }
+    
+    function scrollToElem(id)
+    {
+      $("#panel_viewport").animate({scrollTop: $("#" + id).offset().top - $("#section_top").offset().top}, "slow");
+    }
+  </script>
   <body>
     <center>
-      <img src="https://teckzen.github.io/teckzen2.jpg" style="justify-content: center;vertical-align: middle;height: auto; max-width: 100%;">
-      <br/>
-      <hr/>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.797545363084!2d101.70990331382218!3d3.148051997707766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362832b00e6b%3A0x9514d96ecbe632ce!2sGrand+Millennium+Kuala+Lumpur!5e0!3m2!1sen!2smy!4v1475335544325" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      <br/>
-      <hr/>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScoMmWBU4S8ee8sN9GQEfQd-hJc3gu1zr-Kt8MHNUbuyjfsKw/viewform?embedded=true" width="600" height="190%" frameborder="0" marginheight="0" marginwidth="0" style="overflow:hidden;height:190%;">Loading...</iframe>
-      <!--
-      <br/>
-      <hr/>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX32H_FuIuvShB-VJhEODeYFhxm3m7NTWHEeZo3Ax2LgaCRg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-      -->
+      <table>
+        <tr>
+          <td valign="top">
+            <div id="panel_menu">
+              <button type="button" onclick="scrollToElem('section_top')">Home</button><br/>
+              <button type="button" onclick="scrollToElem('section_map')">Map</button><br/>
+              <button type="button" onclick="scrollToElem('section_rsvp')">RSVP</button>
+            </div>
+          </td>
+          <td>
+            <center>
+            <div id="panel_viewport" style="overflow:auto;height:600">
+              <div id="panel_content">
+                <div id="section_top">
+                </div>
+                
+                <img src="https://teckzen.github.io/teckzen2.jpg" style="justify-content: center;vertical-align: middle;height: auto; max-width: 100%;">
+                <br/>
+                <hr/>
+                <div id="section_map">
+                  <button type="button" onmouseover="showZenMap()">Map</button><button type="button" onmouseover="showGugeMap()">Google Map</button>
+                  <br>
+                  <center>
+                  <table border=1><tr>
+                    <td align>
+                      <div id="zenmap">
+                        <img width="600" src="https://teckzen.github.io/images/map.png"/>
+                      </div>
+                      <div id="gugemap" style="display:none">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.797545363084!2d101.70990331382218!3d3.148051997707766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362832b00e6b%3A0x9514d96ecbe632ce!2sGrand+Millennium+Kuala+Lumpur!5e0!3m2!1sen!2smy!4v1475335544325" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                      </div>
+                    </td>
+                  <td valign="top" width="50">
+                    Hotel offers validated per-entry parking.
+                  </td>
+                  </tr></table>
+                  </center>
+                </div>
+                <br/>
+                <hr/>
+                <div id="section_rsvp">
+                  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScoMmWBU4S8ee8sN9GQEfQd-hJc3gu1zr-Kt8MHNUbuyjfsKw/viewform?embedded=true" width="600" height="600" frameborder="0" marginheight="0" marginwidth="0" style="overflow:hidden;height:600;">Loading...</iframe>
+                </div>
+                </a>
+                <!--
+                <br/>
+                <hr/>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX32H_FuIuvShB-VJhEODeYFhxm3m7NTWHEeZo3Ax2LgaCRg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                -->
+              </div>
+            </div>
+            </center>
+          </td>
+        </tr>
+      </table>
     </center>
   </body>
 </html>
