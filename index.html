@@ -1,20 +1,49 @@
 <html>
   <title>Teck and Zen</title>
   <style>
-    html, body{
+    body{
+      margin: 0;
+      padding: 0;
       height: 100%;
       min-height: 100%;
       font-family: helvetica;
       overflow: hidden;
       text-align: center;
+      background: url(https://teckzen.github.io/images/teckzenbg1.JPG) center no-repeat;
+      background-size: 100%;
+      background-attachment: fixed;
     }
+    
+    table{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    
+    .panel_menu_style{
+      background-color: white;
+    }
+    .panel_menu_style a:link, .panel_menu_style a:visited{
+      color: rgba(10, 10, 10);
+    }
+    
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="javascripts/main.js"></script>
   <script>
   
-    $(document).ready(function() {$("#panel_viewport").height($(window).height())});
-  
+    $(document).ready(init);
+
+    function init()
+    {
+      $("#panel_viewport").height($(window).height());
+      $("#section_header").height($(window).height());
+      $("#header_text").offset().left(100);
+      $("#header_text").position().top(600);
+    }
+
     function showGugeMap()
     {
       $("#zenmap").hide();
@@ -33,7 +62,7 @@
   </script>
   <body>
     <center>
-      <table>
+      <table style="background-color: rgba(255,255,255,0.2);width:100%">
         <tr>
           <td valign="top">
             <!--<div id="panel_menu">
@@ -44,27 +73,43 @@
           </td>
           <td>
             <center>
-            <div id="panel_menu">
-              <a href="" onclick="scrollToElem('section_top')">Home</a> |
-              <a href="" onclick="scrollToElem('section_map')">Map</a> |
-              <a href="#" onclick="scrollToElem('section_rsvp')">RSVP</a>
+            
+            <div id="panel_menu" class="panel_menu_style">
+              <br/>
+              <a href="#" onclick="scrollToElem('section_top')">  Home  </a>
+              <a href="#" onclick="scrollToElem('section_map')">  Map  </a>
+              <a href="#" onclick="scrollToElem('section_rsvp')">  RSVP  </a>
+              <br/><br/>
             </div>
-            <div id="panel_viewport" style="overflow:auto;">
+            
+            <div id="panel_viewport" style="overflow:auto">
               <div id="panel_content">
                 <div id="section_top">
                 </div>
                 
+                <!--
                 <img src="https://teckzen.github.io/teckzen2.jpg" style="justify-content: center;vertical-align: middle;height: auto; max-width: 100%;">
+                -->
+                <div id="section_header">
+                  <div id="header_text" style="font-color:white;font-weight:bold;text-align:left;position:absolute">
+                    <span>EZEN &
+                    <br/>
+                    TECK HUA
+                    <br/>
+                    </span>
+                    are getting married
+                  </div>
+                </div>
                 <br/>
                 <hr/>
-                <div id="section_map">
+                <div id="section_map" class="section_map_style">
                   <button type="button" onmouseover="showZenMap()">Map</button><button type="button" onmouseover="showGugeMap()">Google Map</button>
                   <br>
                   <center>
                   <table><tr>
                     <td align>
                       <div id="zenmap">
-                        <img width="600" src="https://teckzen.github.io/images/map.png"/>
+                        <img width="600" src="images/map1.png"/>
                       </div>
                       <div id="gugemap" style="display:none">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.797545363084!2d101.70990331382218!3d3.148051997707766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362832b00e6b%3A0x9514d96ecbe632ce!2sGrand+Millennium+Kuala+Lumpur!5e0!3m2!1sen!2smy!4v1475335544325" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
