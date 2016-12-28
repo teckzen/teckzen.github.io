@@ -10,8 +10,9 @@
       overflow: hidden;
       text-align: center;
       background: url(https://teckzen.github.io/images/teckzenbg1.jpg) center no-repeat;
-      background-size: 100%;
+      background-size: cover;
       background-attachment: fixed;
+      background-position: center;
     }
     
     table{
@@ -22,13 +23,39 @@
       border-collapse: collapse;
     }
     
+    td{
+      text-align: center
+    }
+    
+    div{
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    
     .panel_menu_style{
       background-color: white;
     }
-    .panel_menu_style a:link, .panel_menu_style a:visited{
-      color: rgba(10, 10, 10);
+    .panel_menu_style a{
+      color: rgba(120, 120, 120, 1);
+      text-decoration: none;
+      font-family: Arial;
     }
     
+    .section_invite_style{
+      background-color: rgba(200, 80, 80, 0.2);
+    }
+    
+    .section_map_style{
+      background-color: rgba(50, 50, 50, 0.2);
+    }
+    
+    .button_style{
+    }
+    
+    .font_5 {font: normal normal normal 27px/1.4em brandon-grot-w01-light,sans-serif ;color:#2F2E2E;}
+    .font_7{
+      font: normal normal normal 20px/1.4em didot-w01-italic,serif ;color:#2F2E2E;
+    } 
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="javascripts/main.js"></script>
@@ -38,10 +65,15 @@
 
     function init()
     {
-      $("#panel_viewport").height($(window).height());
-      $("#section_header").height($(window).height());
-      $("#header_text").offset().left(100);
-      $("#header_text").position().top(600);
+      var myheight = $(window).height();
+      var mywidth = $(window).width();
+      $("#panel_viewport").height(myheight);
+      $("#section_header").height(myheight);
+      $("#section_invite").height(myheight);
+      $("#section_map").height(myheight);
+      $("#section_rsvp").height(myheight);
+      
+      $("#header_text").css({top: myheight/5, left: mywidth/10});
     }
 
     function showGugeMap()
@@ -76,10 +108,15 @@
             
             <div id="panel_menu" class="panel_menu_style">
               <br/>
-              <a href="#" onclick="scrollToElem('section_top')">  Home  </a>
-              <a href="#" onclick="scrollToElem('section_map')">  Map  </a>
-              <a href="#" onclick="scrollToElem('section_rsvp')">  RSVP  </a>
-              <br/><br/>
+              <table style="width:50%">
+                <tr>
+                  <td ><div class="button_style"><a href="#" onclick="scrollToElem('section_top')"> Home </a></div></td>
+                  <td><div class="button_style"><a href="#" onclick="scrollToElem('section_invite')"> You're Invited </a></div></td>
+                  <td><div class="button_style"><a href="#" onclick="scrollToElem('section_map')"> Getting Here </a></div></td>
+                  <td><div class="button_style"><a href="#" onclick="scrollToElem('section_rsvp')"> RSVP </a></div></td>
+                </tr>
+              </table>
+              <br/>
             </div>
             
             <div id="panel_viewport" style="overflow:auto">
@@ -88,42 +125,60 @@
                 </div>
                 
                 <!--
-                <img src="https://teckzen.github.io/teckzen2.jpg" style="justify-content: center;vertical-align: middle;height: auto; max-width: 100%;">
+                <img src="https://teckzen.github.io/teckzen2.jpg" style="justify-content: center;vertical
+                -align: middle;height: auto; max-width: 100%;">
                 -->
                 <div id="section_header">
-                  <div id="header_text" style="font-color:white;font-weight:bold;text-align:left;position:absolute">
-                    <span>EZEN &
+                  <div id="header_text" style="color:white;text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;text-align:left;position:relative">
+                    <span style="font-size:24;font-weight:bold;font-family:lulo-clean-w01-one-bold,sans-serif;letter-spacing:0.45em;">EZEN &
                     <br/>
                     TECK HUA
                     <br/>
                     </span>
+                    <span style="font-size:19;font-style:italic;font-family:didot-w01-italic,serif;letter-spacing:0.3em;">
                     are getting married
+                    </span>
                   </div>
                 </div>
-                <br/>
-                <hr/>
+                <div id="section_invite" class="section_invite_style">
+                  <h5 class="font_5" style="font-size:27px; line-height:1.8em; text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px">YOU'RE INVITED</span></span></span></span></span></h5>
+                  <table style="font-style:italic">
+                    <tr>
+                      <td style="text-align:right;font-style:italic">
+                        <p class="font_7" style="line-height: 2em;"><span style="color:#8B0000"><span style="letter-spacing:0.2em">When</span></span></p>
+                        <p class="font_7" style="font-size:20px; line-height:2em;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">25 Feb 2017, Saturday</span></span></span></span></p>
+                        <p class="font_7" style="font-size:20px; line-height:2em;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Cocktail: 6:00 pm </span></span></span></span></p>
+                        <p class="font_7" style="font-size:20px; line-height:2em;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Dinner: 7:00 pm</span></span></span></span></p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td style="text-align: left">
+                        <p class="font_7" style="line-height: 2em;"><span style="color:#8B0000"><span style="letter-spacing:0.2em">When</span></span></p>
+                        <p class="font_7" style="font-size:20px; line-height:2em;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">25 Feb 2017, Saturday</span></span></span></span></p>
+                        <p class="font_7" style="font-size:20px; line-height:2em;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Cocktail: 6:00 pm </span></span></span></span></p>
+                        <p class="font_7" style="font-size:20px; line-height:2em;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Dinner: 7:00 pm</span></span></span></span></p>
+                      </td>
+                    </tr>
+                  </table>
+
+                </div>
                 <div id="section_map" class="section_map_style">
+                  <h5 class="font_5" style="font-size:27px; line-height:1.8em; text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px">GETTING HERE</span></span></span></span></span></h5>
                   <button type="button" onmouseover="showZenMap()">Map</button><button type="button" onmouseover="showGugeMap()">Google Map</button>
-                  <br>
-                  <center>
-                  <table><tr>
-                    <td align>
+                  <br/>
+                  <br/>
                       <div id="zenmap">
                         <img width="600" src="images/map1.png"/>
                       </div>
-                      <div id="gugemap" style="display:none">
+                      <div id="gugemap" style="display:none"> 
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.797545363084!2d101.70990331382218!3d3.148051997707766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362832b00e6b%3A0x9514d96ecbe632ce!2sGrand+Millennium+Kuala+Lumpur!5e0!3m2!1sen!2smy!4v1475335544325" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                       </div>
-                    </td>
-                  <td valign="top" width="50">
-                    Hotel offers validated per-entry parking.
-                  </td>
-                  </tr></table>
-                  </center>
+                  Hotel offers validated per-entry parking.
                 </div>
-                <br/>
-                <hr/>
                 <div id="section_rsvp">
+                  <h5 class="font_5" style="font-size:27px; line-height:1.8em; text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px">RSVP</span></span></span></span></span></h5>
                   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScoMmWBU4S8ee8sN9GQEfQd-hJc3gu1zr-Kt8MHNUbuyjfsKw/viewform?embedded=true" width="600" height="600" frameborder="0" marginheight="0" marginwidth="0" style="overflow:hidden;height:600;">Loading...</iframe>
                 </div>
                 </a>
