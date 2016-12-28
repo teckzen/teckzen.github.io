@@ -54,7 +54,7 @@
     
     .font_5 {font: normal normal normal 27px/1.4em brandon-grot-w01-light,sans-serif ;color:#2F2E2E;}
     .font_7{
-      font: normal normal normal 20px/1.4em didot-w01-italic,serif ;color:#2F2E2E;
+      font: normal normal normal 20px/1.4em didot-w01-italic,serif ;color:#2F2E2E;font-style:italic
     } 
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -68,10 +68,14 @@
       var myheight = $(window).height();
       var mywidth = $(window).width();
       $("#panel_viewport").height(myheight);
-      $("#section_header").height(myheight);
-      $("#section_invite").height(myheight);
-      $("#section_map").height(myheight);
-      $("#section_rsvp").height(myheight);
+      if ($("#section_header").height() < myheight)
+        $("#section_header").height(myheight);
+      if ($("#section_invite").height() < myheight)
+        $("#section_invite").height(myheight);
+      if ($("#section_map").height() < myheight)
+        $("#section_map").height(myheight);
+      if ($("#section_rsvp").height() < myheight)
+        $("#section_rsvp").height(myheight);
       
       $("#header_text").css({top: myheight/5, left: mywidth/10});
     }
@@ -142,9 +146,9 @@
                 </div>
                 <div id="section_invite" class="section_invite_style">
                   <h5 class="font_5" style="font-size:27px; line-height:1.8em; text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px">YOU'RE INVITED</span></span></span></span></span></h5>
-                  <table style="font-style:italic">
+                  <table>
                     <tr>
-                      <td style="text-align:right;font-style:italic">
+                      <td style="text-align:right">
                         <p class="font_7" style="line-height: 2em;"><span style="color:#8B0000"><span style="letter-spacing:0.2em">When</span></span></p>
                         <p class="font_7" style="font-size:20px; line-height:2em;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">25 Feb 2017, Saturday</span></span></span></span></p>
                         <p class="font_7" style="font-size:20px; line-height:2em;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Cocktail: 6:00 pm </span></span></span></span></p>
