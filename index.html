@@ -13,6 +13,7 @@
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
+      font-family:lucida console,lucida-console-w01,monospace;
     }
     
     table{
@@ -42,11 +43,20 @@
     }
     
     .section_invite_style{
-      background-color: rgba(232, 210, 218, 0.4);
+      background-color: rgba(232, 210, 218, 0.8);
     }
     
     .section_map_style{
-      background-color: rgba(70, 70, 70, 0.4);
+      background-color: rgba(190, 190, 190, 0.6);
+    }
+    
+    .section_pre_rsvp_style{
+      background-color: rgba(247, 233, 232, 1);
+      background-color: rgba(232, 210, 218, 1);
+    }
+    
+    .section_rsvp_style{
+      background-color: rgba(247, 245, 225, 0.4);
     }
     
     .button_style{
@@ -77,6 +87,9 @@
         $("#section_map").height(myheight);
       if ($("#section_rsvp").height() < myheight)
         $("#section_rsvp").height(myheight);
+      if ($("#section_footer").height() < myheight/2)
+        $("#section_footer").height(myheight/2);
+
       
       $("#header_text").css({top: myheight/5, left: mywidth/10});
     }
@@ -147,7 +160,7 @@
                 </div>
                 <div id="section_invite" class="section_invite_style">
                   <h5 class="font_5" style="font-size:27px; line-height:1.8em; text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px">YOU'RE INVITED</span></span></span></span></span></h5>
-                  <table>
+                  <table style="width:80%;table-layout:fixed">
                     <tr>
                       <td style="text-align:right">
                         <p class="font_7" style="line-height: 2em;"><span style="color:#8B0000"><span style="letter-spacing:0.2em">When</span></span></p>
@@ -163,41 +176,51 @@
                         <p class="font_7" style="line-height: 2em;"><span style="color:#8B0000"><span style="letter-spacing:0.2em">Where</span></span></p>
                         <p class="font_7" style="font-size:20px;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Grand Millennium Hotel Kuala Lumpur</span></span></span></span></p>
                         <p class="font_7" style="font-size:20px;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Millennium Ballroom</span></span></span></span></p>
-                        <p class="font_7" style="font-size:20px;git "><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">160 Jalan Bukit Bintang, 55100 KL</span></span></span></span></p>
-                        <p class="font_7" style="font-size:18px;git "><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px"><a href="#" onclick="scrollToElem('section_map')" style="display:block">View Map</div></span></span></span></span></p>
-                        
-                        <div class="button_style"><a href="#" onclick="scrollToElem('section_rsvp')" style="display:block"> RSVP </a></div>
+                        <p class="font_7" style="font-size:20px;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">160 Jalan Bukit Bintang, 55100 KL</span></span></span></span></p>
+                        <p class="font_7"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:16px"><a href="#" onclick="scrollToElem('section_map')" style="display:block;color:#2F2E2E;">(View Map)</div></span></span></span></span></p>
                       </td>
                     </tr>
                   </table>
-
+                  <div id="section_pre_rsvp" class="section_pre_rsvp_style">
+                    <hr/>
+                    <h5 class="font_5" style="font-size:27px;text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px"><a href="#" onclick="scrollToElem('section_rsvp')" style="display:block;text-decoration:none;color:white">Click to RSVP</a></span></span></span></span></span></h5>
+                    <hr/>
+                  </div>
                 </div>
                 <div id="section_map" class="section_map_style">
                   <h5 class="font_5" style="font-size:27px; line-height:1.8em; text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px">GETTING HERE</span></span></span></span></span></h5>
 <!--                  <button type="button" onmouseover="showZenMap()">Map</button><button type="button" onmouseover="showGugeMap()">Google Map</button>
                   <br/>
                   <br/>-->
+                  <p class="font_7" style="line-height: 2em;"><span style="color:#8B0000"><span style="letter-spacing:0.2em">Simplified Map</span></span></p>
                       <div id="zenmap">
                         <img width="600" src="images/map1.png"/>
                       </div>
                       <br/>
+                  <p class="font_7" style="line-height: 2em;"><span style="color:#8B0000"><span style="letter-spacing:0.2em">Google Map</span></span></p>
                       <div id="gugemap"> 
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.797545363084!2d101.70990331382218!3d3.148051997707766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362832b00e6b%3A0x9514d96ecbe632ce!2sGrand+Millennium+Kuala+Lumpur!5e0!3m2!1sen!2smy!4v1475335544325" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                       </div>
-                  <br/>
-                  Hotel offers validated per-entry parking.
+                  <p class="font_7" style="line-height: 2em;"><span style="color:#8B0000"><span style="letter-spacing:0.2em">Parking</span></span></p>
+                  <p class="font_7" style="font-size:20px;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Hotel offers validated per-entry parking</span></span></span></span></p>
                 </div>
-                <div id="section_rsvp">
+                <div id="section_rsvp" class="section_rsvp_style">
                   <h5 class="font_5" style="font-size:27px; line-height:1.8em; text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px">RSVP</span></span></span></span></span></h5>
                   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScoMmWBU4S8ee8sN9GQEfQd-hJc3gu1zr-Kt8MHNUbuyjfsKw/viewform?embedded=true" width="600" height="600" frameborder="0" marginheight="0" marginwidth="0" style="overflow:hidden;height:600;">Loading...</iframe>
                 </div>
-                </a>
+                <div id="section_footer">
+                  <h5 class="font_5" style="font-size:27px; line-height:1.8em; text-align:center"><span style="color:#000000"><span style="letter-spacing:0.45em"><span style="text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px"><span style="font-family:brandon-grot-w01-light,sans-serif"><span style="font-size:27px">More Information</span></span></span></span></span></h5>
+                  <span class="font_7" style="text-decoration:italic">Reach us at info@teckzen.com</span>
+                  <br/>
+                  <span style="letter-spacing:0.25em;">#TECKZEN</span>
+                </div>
                 <!--
                 <br/>
                 <hr/>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX32H_FuIuvShB-VJhEODeYFhxm3m7NTWHEeZo3Ax2LgaCRg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
                 -->
               </div>
+
             </div>
             </center>
           </td>
