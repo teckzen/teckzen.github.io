@@ -50,6 +50,7 @@
     }
     
     .button_style{
+      box-sizing:border-box;cursor:pointer;font:normal normal normal 14px/1.4em brandon-grot-w01-light,sans-serif;
     }
     
     .font_5 {font: normal normal normal 27px/1.4em brandon-grot-w01-light,sans-serif ;color:#2F2E2E;}
@@ -112,7 +113,7 @@
             
             <div id="panel_menu" class="panel_menu_style">
               <br/>
-              <table style="width:70%">
+              <table style="width:70%;table-layout: fixed;">
                 <tr>
                   <td ><div class="button_style"><a href="#" onclick="scrollToElem('section_top')" style="display:block"> Home </a></div></td>
                   <td><div class="button_style"><a href="#" onclick="scrollToElem('section_invite')" style="display:block"> You're Invited </a></div></td>
@@ -163,6 +164,9 @@
                         <p class="font_7" style="font-size:20px;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Grand Millennium Hotel Kuala Lumpur</span></span></span></span></p>
                         <p class="font_7" style="font-size:20px;"><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">Millennium Ballroom</span></span></span></span></p>
                         <p class="font_7" style="font-size:20px;git "><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px">160 Jalan Bukit Bintang, 55100 KL</span></span></span></span></p>
+                        <p class="font_7" style="font-size:18px;git "><span style="letter-spacing:0.15em"><span class="color_15"><span style="font-family:didot-w01-italic,serif"><span style="font-size:20px"><a href="#" onclick="scrollToElem('section_map')" style="display:block">View Map</div></span></span></span></span></p>
+                        
+                        <div class="button_style"><a href="#" onclick="scrollToElem('section_rsvp')" style="display:block"> RSVP </a></div>
                       </td>
                     </tr>
                   </table>
@@ -180,6 +184,7 @@
                       <div id="gugemap"> 
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.797545363084!2d101.70990331382218!3d3.148051997707766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362832b00e6b%3A0x9514d96ecbe632ce!2sGrand+Millennium+Kuala+Lumpur!5e0!3m2!1sen!2smy!4v1475335544325" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                       </div>
+                  <br/>
                   Hotel offers validated per-entry parking.
                 </div>
                 <div id="section_rsvp">
